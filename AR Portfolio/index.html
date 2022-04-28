@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Marker based AR Portfolio</title>
+
+    <!-- Import A-Frame and then AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene background="color: #FAFAFA" vr-mode-ui="enabled:false" embedded-arjs="sourceType : webcam; 
+            sourceWidth : 1280;
+            sourceHeight :960;
+            displayWidth : 1280; 
+            displayHeight: 960; 
+            debugUIEnabled : false">
+        <a-assets>
+            <img id="plane" src="./assets/informationCards/2.png">
+            <img id="virtual-tour" src="./assets/informationCards/3.png">
+            <img id="FPS" src="./assets/informationCards/4.png">
+            <img id="navigation" src="./assets/informationCards/5.png">
+            <img id="menu-card" src="./assets/informationCards/6.png">
+        </a-assets>
+
+        <!-- Creating the marker Tag for Flight Simulation-->
+        <a-marker type = "pattern" url = "./assets/markers/pattern-icon-01.patt">
+            <a-plane src="#plane" position="0 1.6 0" rotation="0 90 0" width="2" height="2"></a-plane>
+        </a-marker>
+
+        <!-- Creating the marker Tag for VirtualTour-->
+        <a-marker type = "pattern" url = "./assets/markers/pattern-icon-04.patt">
+            <a-plane src="#virtual-tour" position="0 1.6 0" rotation="0 90 0" width="2" height="2"></a-plane>
+        </a-marker>
+
+        <!-- Creating the marker Tag for FPS-->
+        <a-marker type = "pattern" url = "./assets/markers/pattern-icon-06.patt">
+            <a-plane src="#FPS" position="0 1.6 0" rotation="0 90 0" width="2" height="2"></a-plane>
+        </a-marker>
+
+        <!-- Creating the marker Tag for Navigation-->
+        <a-marker type = "pattern" url = "./assets/markers/pattern-icon-03.patt">
+            <a-plane src="#navigation" position="0 1.6 0" rotation="0 90 0" width="2" height="2"></a-plane>
+        </a-marker>
+
+        <!-- Creating the marker Tag for Menu Card>-->
+        <a-marker type = "pattern" url = "./assets/markers/pattern-icon-02.patt">
+            <a-plane src="#menu-card" position="0 1.6 0" rotation="0 90 0" width="2" height="2"></a-plane>
+        </a-marker>
+    </a-scene>
+</body>
+
+</html>
